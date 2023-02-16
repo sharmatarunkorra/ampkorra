@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html amp lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,minimum-scale=1,initial-scale=1"
+    />
+    <title>Hello, amp-story</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+    
+    <style amp-boilerplate>
+      body {
+        -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      }
+      .yearvector amp-img {
+        margin: 0 auto;
+      }
+      @-webkit-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-moz-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-ms-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-o-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      .videoamp {
+        padding: 0;
+      }
+      .videoamp amp-video video {
+        height: 100%;
+        object-fit: cover;
+      }
+      .videoamp amp-video {
+        height: 400px !important;
+      }
+      .textamp {
+        height: calc(100% - 400px);
+        top: auto !important;
+        padding-top: 0;
+        background: #73b76b;
+        overflow: unset !important;
+      }
+      .bgcolor {
+        background: #72abf1;
+      }
+      .textamp strong.custom-animation {
+        margin-top: -100px;
+        text-align: right;
+        color: #73b76b;
+        font-size: 7rem;
+        font-family: roboto;
+      }
+      .bgheading h4 {
+        color: #fff;
+        font-family: 'Roboto';
+        font-size: 1.2rem;
+      }
+      .bgpara {
+        padding-top: 60%;
+      }
+      .bgpara h2 {
+        font-size: 3.2rem;
+        font-family: 'Roboto';
+        font-weight: 800;
+        line-height: 1;
+        color: #235bcb;
+      }
+      .textamp h2 {
+        font-size: 50px;
+        font-family: roboto;
+        font-weight: 600;
+        line-height: 1.1;
+        color: #fff;
+      }
+    </style>
+    <noscript
+      ><style amp-boilerplate>
+        body {
+          -webkit-animation: none;
+          -moz-animation: none;
+          -ms-animation: none;
+          animation: none;
+        }
+      </style></noscript
+    >
+  </head>
+  <body>
+    <amp-story
+      standalone
+      title="Hello Story"
+      publisher="The AMP Team"
+      publisher-logo-src="https://example.com/logo/1x1.png"
+      poster-portrait-src="https://example.com/my-story/poster/3x4.jpg"
+    >
+      <amp-story-page id="cover">
+        <amp-story-grid-layer template="vertical" class="videoamp">
+          <amp-video width="100" height="270" src="https://playground.amp.dev/static/samples/video/tokyo.mp4" poster="" layout="responsive" loop>
+          <source type="video/mp4" src="https://playground.amp.dev/static/samples/video/tokyo.mp4">
+          <source type="video/mp4" src="https://playground.amp.dev/static/samples/video/tokyo.webm">
+        </amp-video>
+        </amp-story-grid-layer>
+        <amp-story-grid-layer template="vertical" class="textamp">
+          <strong class="custom-animation">1</strong>
+          <h2 animate-in="fly-in-left"
+      animate-in-delay="1s"
+      animate-in-duration="0.5s">Soul Searching</h2>
+        </amp-story-grid-layer>
+
+        <amp-story-animation layout="nodisplay" trigger="visibility">
+          <script type="application/json">
+            {
+              "selector": ".custom-animation",
+              "duration": "1s",
+              "easing": "ease-in-out",
+              "keyframes": [
+                {"transform": "translateY(10px)", "opacity": 0},
+                {"transform": "translateY(-5px)", "opacity": 1},
+                {"transform": "translateX(0)"}
+              ]
+            }
+          </script>
+        </amp-story-animation>
+      </amp-story-page>
+      <amp-story-page id="my-first-page" class="bgcolor">
+        <amp-story-grid-layer template="vertical"  class="bgheading">
+          <h4 animate-in="fly-in-right"
+      animate-in-delay="0.3s"
+      animate-in-duration="0.5s">
+            Our Year in Search report looks at APAC’s top searches to uncover 3 key insights about its people. 
+          </h2>
+        </amp-story-grid-layer>
+        <amp-story-grid-layer template="vertical"  class="bgpara">
+          <h2 animate-in="fly-in-right"
+      animate-in-delay="0.3s"
+      animate-in-duration="0.5s">
+            Look back to
+          </h2>
+          <h2 animate-in="fly-in-left"
+      animate-in-delay="0.3s"
+      animate-in-duration="0.5s">
+            move your
+          </h2>
+          <h2 animate-in="fly-in-right"
+      animate-in-delay="0.3s"
+      animate-in-duration="0.5s">
+            marketing
+          </h2>
+          <h2 animate-in="fly-in-left"
+      animate-in-delay="0.3s"
+      animate-in-duration="0.5s">
+            forward
+          </h2>
+        </amp-story-grid-layer>
+      </amp-story-page>
+      <amp-story-page id="my-first-page" class="bgcolor" style="background: #fff;">
+        <amp-story-grid-layer template="vertical"  class="bgheading" animate-in="fade-in"
+            animate-in-delay="0.5s"
+            animate-in-duration="0.5s">
+          <div style="font-family: roboto; color: rgba(38, 135, 77, 1); letter-spacing: -0.03em; "><h2><span style="line-height: 1.3;  font-size: 1.8rem; ">They’re proud locals but they also identify with global culture. </span></h2></div>
+        </amp-story-grid-layer>
+        <amp-story-grid-layer template="vertical"  class="bgpara">
+          <div style="letter-spacing: 0em;" animate-in="fade-in"
+            animate-in-delay="1s"
+            animate-in-duration="1s">
+            <p style="font-family: roboto; color: rgba(32, 33, 36, 1);font-size: 1.2rem;"><span style="line-height: 1.4; ">+90% YOY search interest in</span></p>
+            <p><span style="line-height: 1.4; color: rgba(255, 255, 255, 1); background: rgba(115, 193, 107, 1); padding: 0em 0.4em 0em 0.4em; border: 0px solid rgba(0, 0, 0, 1); border-radius: 1em; font-family: roboto;font-weight: 600; font-size: 1.2rem;">local guide program</span><span style="font-family: roboto; line-height: 1.15em; color: rgba(32, 33, 36, 1);font-size: 1.2rem;"> in India</span></p>
+          </div>
+          <div style="letter-spacing: 0em;" animate-in="fade-in"
+            animate-in-delay="1s"
+            animate-in-duration="1s">
+            <p style="font-family: roboto; color: rgba(32, 33, 36, 1);font-size: 1.2rem;"><span style="line-height: 1.4; ">+20% YOY search interest in</span></p>
+            <p><span style="line-height: 1.4; color: rgba(255, 255, 255, 1); background: rgba(115, 193, 107, 1); padding: 0em 0.4em 0em 0.4em; border: 0px solid rgba(0, 0, 0, 1); border-radius: 1em; font-family: roboto;font-weight: 600; font-size: 1.2rem;">kpop</span><span style="font-family: roboto; line-height: 1.15em; color: rgba(32, 33, 36, 1);font-size: 1.2rem;">in India and Australia</span></p>
+          </div>
+          <amp-img
+            src="images/what-is-work-life-balance.png"
+            width="400"
+            height="340"
+            alt="" animate-in="fade-in"
+            animate-in-delay="1s"
+            animate-in-duration="1s"
+          >
+          </amp-img>
+        </amp-story-grid-layer>
+      </amp-story-page>
+      
+      <amp-story-page id="my-first-page" class="bgcolor" style="background: #73b76b;">
+        <amp-story-grid-layer template="vertical"  class="bgheading" animate-in="fade-in"
+            animate-in-delay="0.5s"
+            animate-in-duration="0.5s">
+          <div style="font-family: roboto; color: #26874d; letter-spacing: -0.03em; "><h2><span style="line-height: 1.3;  font-size: 1.8rem; ">They’re proud locals but they also identify with global culture. </span></h2></div>
+        </amp-story-grid-layer>
+        <amp-story-grid-layer template="vertical"  class="bgpara">
+          <div style="letter-spacing: 0em;" animate-in="fade-in"
+            animate-in-delay="1s"
+            animate-in-duration="1s">
+            <p style="line-height: 1.4; color: rgba(255, 255, 255, 1); border-left: 2px solid #fff; border-radius: 0;padding-left: 20px; font-family: roboto;font-weight: 600; font-size: 1.2rem;">Inclusive marketing needs to be a mindset, not a checkbox.</p>
+            <p><span style="line-height: 1.4; margin-top: 20px; display:inline-block;color: rgba(255, 255, 255, 1); border-left: 2px solid #fff; border-radius: 0;padding-left: 20px; font-family: roboto;font-weight: 600; font-size: 1.2rem;">Engage your audience in diverse ways, such as a visually-rich Search experience.</span></p>
+          </div>
+        </amp-story-grid-layer>
+      </amp-story-page>
+      <amp-story-page id="my-second-page">
+        <amp-story-grid-layer template="fill">
+          <amp-video width="480" height="270" src="https://cdn.thenewsroom.io/platform/story_media/1288820797/yis_2022_cover_hard_cuts_v2_1080x1920px_crf_36.mp4" poster="" layout="responsive" loop>
+          <source type="video/mp4" src="https://cdn.thenewsroom.io/platform/story_media/1288820797/yis_2022_cover_hard_cuts_v2_1080x1920px_crf_36.mp4">
+          <source type="video/mp4" src="https://cdn.thenewsroom.io/platform/story_media/1288820797/yis_2022_cover_hard_cuts_v2_1080x1920px_crf_36.webm">
+        </amp-video>
+        </amp-story-grid-layer>
+        <amp-story-grid-layer class="yearvector" animate-in="fade-in"
+            animate-in-delay="1s"
+            animate-in-duration="1s">
+          <amp-img
+            src="images/year2022.png"
+            width="100"
+            height="100"
+            alt="" 
+          >
+          </amp-img>
+        </amp-story-grid-layer>
+      </amp-story-page>
+    </amp-story>
+  </body>
+</html>
